@@ -1,0 +1,386 @@
+[
+  {
+    "program": "Bachelor of Agriculture (B.Sc. (Agriculture))",
+    "specializations": [
+      "Agronomy",
+      "Horticulture",
+      "Plant Pathology",
+      "Soil Science",
+      "Agricultural Economics"
+    ]
+  },
+  {
+    "program": "Bachelor of Architecture",
+    "specializations": [
+      "Urban Planning",
+      "Interior Design",
+      "Landscape Architecture",
+      "Sustainable Architecture"
+    ]
+  },
+  {
+    "program": "Bachelor of Arts (B.A.)",
+    "specializations": [
+      "History",
+      "Psychology",
+      "Political Science",
+      "Sociology",
+      "Literature"
+    ]
+  },
+  {
+    "program": "Bachelor of Commerce (B.Com)",
+    "specializations": [
+      "Accounting",
+      "Finance",
+      "Marketing",
+      "Human Resource Management"
+    ]
+  },
+  {
+    "program": "Bachelor of Computer Engineering (BE Comp)",
+    "specializations": [
+      "Software Engineering",
+      "Cyber Security",
+      "Artificial Intelligence",
+      "Data Science"
+    ]
+  },
+  {
+    "program": "Bachelor of Computer Science (B.Sc. (Computer Science))",
+    "specializations": [
+      "Software Development",
+      "Network Administration",
+      "Database Management",
+      "Web Development"
+    ]
+  },
+  {
+    "program": "Bachelor of Engineering",
+    "specializations": [
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Electrical Engineering",
+      "Chemical Engineering"
+    ]
+  },
+  {
+    "program": "Bachelor of Fine Arts (BFA)",
+    "specializations": [
+      "Painting",
+      "Sculpture",
+      "Graphic Design",
+      "Photography"
+    ]
+  },
+  {
+    "program": "Bachelor of Home Science (B.Sc. (Home Science))",
+    "specializations": [
+      "Food and Nutrition",
+      "Human Development",
+      "Textile and Apparel Designing"
+    ]
+  },
+  {
+    "program": "Bachelor of Library (B.Lib)",
+    "specializations": [
+      "Library Science",
+      "Information Management",
+      "Digital Libraries"
+    ]
+  },
+  {
+    "program": "Bachelor of Mass Communications (B.M.C)",
+    "specializations": [
+      "Journalism",
+      "Advertising",
+      "Public Relations",
+      "Broadcasting"
+    ]
+  },
+  {
+    "program": "Bachelor of Pharmacy (B.Pharm)",
+    "specializations": [
+      "Pharmaceutical Chemistry",
+      "Pharmacology",
+      "Pharmaceutics",
+      "Pharmacy Practice"
+    ]
+  },
+  {
+    "program": "Bachelor of Science (Maths, Physics, Computer Science) (B.Sc MPCS)",
+    "specializations": ["Mathematics", "Physics", "Computer Science"]
+  },
+  {
+    "program": "Bachelor of Science (B.Sc.)",
+    "specializations": ["Physics", "Chemistry", "Biology", "Mathematics"]
+  },
+  {
+    "program": "Bachelor of Social Work (BSW)",
+    "specializations": [
+      "Community Development",
+      "Social Policy",
+      "Counseling",
+      "Child Protection"
+    ]
+  },
+  {
+    "program": "Bachelor of Technology (B.Tech.)",
+    "specializations": [
+      "Computer Science and Engineering",
+      "Electronics and Communication Engineering",
+      "Mechanical Engineering",
+      "Civil Engineering"
+    ]
+  },
+  {
+    "program": "Bachelors of Business Administration (BBA)",
+    "specializations": [
+      "Finance",
+      "Marketing",
+      "Human Resource Management",
+      "Operations Management"
+    ]
+  },
+  {
+    "program": "Bachelors of Computer Application (BCA)",
+    "specializations": [
+      "Software Development",
+      "System Analysis",
+      "Web Technologies",
+      "Database Management"
+    ]
+  },
+  {
+    "program": "Bachelors of Engineering (B.E.)",
+    "specializations": [
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Electrical Engineering",
+      "Computer Engineering"
+    ]
+  },
+  {
+    "program": "Bachelors of Management Studies (BMS)",
+    "specializations": [
+      "Finance",
+      "Marketing",
+      "Human Resource Management",
+      "Operations Management"
+    ]
+  },
+  {
+    "program": "Diploma",
+    "specializations": [
+      "Computer Science",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Electrical Engineering"
+    ]
+  },
+  {
+    "program": "Diploma in Computer Science (Diploma CS)",
+    "specializations": [
+      "Software Engineering",
+      "Networking",
+      "Database Management"
+    ]
+  },
+  {
+    "program": "Diploma in Electronics and Telecommunication (DIET)",
+    "specializations": [
+      "Communication Systems",
+      "Signal Processing",
+      "Embedded Systems"
+    ]
+  },
+  {
+    "program": "Diploma in IT (Diploma IT)",
+    "specializations": [
+      "Web Development",
+      "Network Security",
+      "System Administration"
+    ]
+  },
+  {
+    "program": "Doctor of Pharmacy (Pharm.D)",
+    "specializations": [
+      "Clinical Pharmacy",
+      "Pharmacy Practice",
+      "Pharmacotherapy"
+    ]
+  },
+  {
+    "program": "Doctor of Philosophy (PhD)",
+    "specializations": ["Physics", "Chemistry", "Biology", "Engineering"]
+  },
+  {
+    "program": "Master of Architecture (M.Arch.)",
+    "specializations": [
+      "Urban Planning",
+      "Sustainable Design",
+      "Interior Architecture"
+    ]
+  },
+  {
+    "program": "Master of Commerce (M.Com.)",
+    "specializations": [
+      "Accounting",
+      "Finance",
+      "Taxation",
+      "Business Analytics"
+    ]
+  },
+  {
+    "program": "Master of Fine Arts (MFA)",
+    "specializations": [
+      "Painting",
+      "Sculpture",
+      "Photography",
+      "Graphic Design"
+    ]
+  },
+  {
+    "program": "Master of Library (M.Lib)",
+    "specializations": [
+      "Library Science",
+      "Information Management",
+      "Digital Libraries"
+    ]
+  },
+  {
+    "program": "Master of Mass Communications (M.M.C)",
+    "specializations": [
+      "Journalism",
+      "Advertising",
+      "Public Relations",
+      "Media Management"
+    ]
+  },
+  {
+    "program": "Master of Philosophy",
+    "specializations": ["Philosophy", "Ethics", "Metaphysics", "Epistemology"]
+  },
+  {
+    "program": "Master of Science",
+    "specializations": ["Physics", "Chemistry", "Biology", "Mathematics"]
+  },
+  {
+    "program": "Master of Science in Agriculture (M.Sc. (Agriculture))",
+    "specializations": ["Agronomy", "Horticulture", "Plant Pathology"]
+  },
+  {
+    "program": "Master of Social Work (M.S.W.)",
+    "specializations": [
+      "Community Development",
+      "Social Policy",
+      "Counseling",
+      "Child Protection"
+    ]
+  },
+  {
+    "program": "Master of Technology",
+    "specializations": [
+      "Computer Science",
+      "Mechanical Engineering",
+      "Electrical Engineering",
+      "Civil Engineering"
+    ]
+  },
+  {
+    "program": "Masters of Business Administration (MBA)",
+    "specializations": [
+      "Finance",
+      "Marketing",
+      "Human Resource Management",
+      "Operations Management"
+    ]
+  },
+  {
+    "program": "Masters of Computer Application (MCA)",
+    "specializations": [
+      "Software Development",
+      "System Analysis",
+      "Web Technologies",
+      "Database Management"
+    ]
+  },
+  {
+    "program": "Masters of Engineering (M.E.)",
+    "specializations": [
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Electrical Engineering",
+      "Computer Engineering"
+    ]
+  },
+  {
+    "program": "Masters of Management Studies (M.M.S.)",
+    "specializations": [
+      "Finance",
+      "Marketing",
+      "Human Resource Management",
+      "Operations Management"
+    ]
+  },
+  {
+    "program": "Masters of Pharmacy (M.Pharm)",
+    "specializations": [
+      "Pharmaceutical Chemistry",
+      "Pharmacology",
+      "Pharmaceutics",
+      "Pharmacy Practice"
+    ]
+  },
+  {
+    "program": "Masters of Science (M.S.)",
+    "specializations": [
+      "Computer Science",
+      "Data Science",
+      "Biotechnology",
+      "Environmental Science"
+    ]
+  },
+  {
+    "program": "Masters of Science (M.Sc.)",
+    "specializations": ["Physics", "Chemistry", "Biology", "Mathematics"]
+  },
+  {
+    "program": "Masters of Technology (M.Tech.)",
+    "specializations": [
+      "Computer Science and Engineering",
+      "Mechanical Engineering",
+      "Electronics and Communication Engineering",
+      "Civil Engineering"
+    ]
+  },
+  {
+    "program": "Post Graduate Diploma in Industrial Engineering",
+    "specializations": [
+      "Industrial Safety",
+      "Quality Management",
+      "Production Planning"
+    ]
+  },
+  {
+    "program": "Post Graduate Diploma in Management (PGDM)",
+    "specializations": [
+      "Finance",
+      "Marketing",
+      "Human Resource Management",
+      "Operations Management"
+    ]
+  },
+  {
+    "program": "Post Graduate Program (PGP)",
+    "specializations": [
+      "Business Analytics",
+      "Digital Marketing",
+      "Project Management"
+    ]
+  },
+  {
+    "program": "Other",
+    "specializations": []
+  }
+]

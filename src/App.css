@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.box_shadow {
+  box-shadow: 3px 5px #c5ddff;
+}
+
+.ck-editor__editable {
+  width: 100%;
+  min-height: 240px; /* Adjust the height as needed */
+  position: relative;
+}
+
+.ck-editor__editable::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 23px; /* Adjust this value to position the lines */
+  left: 0;
+  right: 0;
+  height: 2px; /* Height of the line */
+  background: linear-gradient(to bottom, transparent 50%, #d6d6d6 50%), linear-gradient(to bottom, transparent 50%, #d6d6d6 50%);
+  background-size: 100% 2px, 100% 2px;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 10px; /* Positioning the two lines */
+}
+
+.PhoneInputInput {
+  flex: 1 1;
+  min-width: 0;
+  background: #f4f7f8;
+  border: none;
+  padding: none;
+}
