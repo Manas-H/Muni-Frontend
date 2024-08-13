@@ -6,6 +6,7 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
+import Loader from "../../Loader/Loader";
 
 const ViewApplications = () => {
   const [viewJobPostings, setViewJobPostings] = useState([]);
@@ -93,16 +94,34 @@ const ViewApplications = () => {
     }));
   }, [viewJobPostings]);
 
+  const [expandedRows, setExpandedRows] = useState({});
+
+  const toggleRowExpansion = (rowId) => {
+    setExpandedRows((prev) => ({
+      ...prev,
+      [rowId]: !prev[rowId],
+    }));
+  };
+
   const columns = React.useMemo(
     () =>
       [
         {
           header: "JOB TITLE",
           accessorKey: "jobTitle",
-          cell: ({ getValue }) => (
-            <div className="text-start">
+          cell: ({ row, getValue }) => (
+            <div
+              className="text-start cursor-pointer"
+              onClick={() => toggleRowExpansion(row.original._id)}
+            >
               <span className="mr-2">
-                <i className="fa fa-plus-circle text-xs" />
+                <i
+                  className={`fa ${
+                    expandedRows[row.original._id]
+                      ? "fa-minus-circle"
+                      : "fa-plus-circle"
+                  } text-xs`}
+                />
               </span>
               {getValue()}
             </div>
@@ -170,7 +189,7 @@ const ViewApplications = () => {
           ),
         },
       ].filter((column) => selectedColumns[column.accessorKey]),
-    [handleDelete, selectedColumns]
+    [handleDelete, selectedColumns, expandedRows]
   );
 
   const table = useReactTable({
@@ -198,7 +217,11 @@ const ViewApplications = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex flex-col bg-white text-black pt-52 h-[100vh]">
+        <Loader />
+      </div>
+    );
   }
 
   if (error) {
@@ -250,7 +273,7 @@ const ViewApplications = () => {
           All
         </button>
       </div>
-      <div className="border-[1px] border-gray-200 mx-10 bg-white">
+      <div className="border-[1px] border-gray-200 mx-10 bg-white mb-3">
         <div className=" mb-4 flex items-center mx-2 my-2  overflow-x-auto">
           <span className="mr-2 text-[14px]">Show</span>
           <select
@@ -298,29 +321,31 @@ const ViewApplications = () => {
             </div>
           )}
         </div>
-        <div className="mt-4 flex justify-between items-center mx-2  overflow-x-auto">
+        <div className="my-4 flex justify-between items-center mx-2  overflow-x-auto">
           <div className="text-[#333333] text-[12px] ">
             Showing {startEntry} to {endEntry} of {totalEntries} entries
           </div>
           <div>
-          <button
+            <button
               className="text-[10px] border border-gray-200 px-4 py-2 mr-0.5"
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
             >
               Previous
             </button>
-            {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-              <button
-                key={page}
-                className={`text-[10px] border border-gray-200 px-4 py-2 mr-0.5 ${
-                  page === currentPage ? "bg-[#282c33] text-white" : ""
-                }`}
-                onClick={() => handlePageChange(page)}
-              >
-                {page}
-              </button>
-            ))}
+            {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+              (page) => (
+                <button
+                  key={page}
+                  className={`text-[10px] border border-gray-200 px-4 py-2 mr-0.5 ${
+                    page === currentPage ? "bg-[#282c33] text-white" : ""
+                  }`}
+                  onClick={() => handlePageChange(page)}
+                >
+                  {page}
+                </button>
+              )
+            )}
             <button
               className="text-[10px] border border-gray-200 px-4 py-2"
               onClick={() => handlePageChange(currentPage + 1)}
@@ -330,7 +355,7 @@ const ViewApplications = () => {
             </button>
           </div>
         </div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto ">
           <table className="w-full border-collapse ">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
@@ -350,21 +375,46 @@ const ViewApplications = () => {
               ))}
             </thead>
             <tbody>
-              {table.getRowModel().rows.map((row) => (
-                <tr key={row.id}>
-                  {row.getVisibleCells().map((cell) => (
-                    <td
-                      key={cell.id}
-                      className="text-xs border-b-[1px] border-gray-200 p-2"
-                    >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </td>
-                  ))}
+              {table.getRowModel().rows.length > 0 ? (
+                table.getRowModel().rows.map((row) => (
+                  <React.Fragment key={row.id}>
+                    <tr>
+                      {row.getVisibleCells().map((cell) => (
+                        <td
+                          key={cell.id}
+                          className="text-xs border-b-[1px] border-gray-200 p-2 hover:bg-gray-200"
+                        >
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                    {expandedRows[row.original._id] && (
+                      <tr>
+                        <td
+                          colSpan={columns.length}
+                          className="bg-gray-100 p-2"
+                        >
+                          {/* {row.original.details} */}
+                          <ul className="flex flex-col items-start text-xs text-gray-600">
+                            <li>Aptitude</li>
+                            <li>Interview Round 1</li>
+                            <li>Interview Round 1</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    )}
+                  </React.Fragment>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="12" className="py-3 text-black text-center">
+                    No jobs found.
+                  </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>

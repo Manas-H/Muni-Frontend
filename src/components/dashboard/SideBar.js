@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+const jobRelatedRoutes = [
+  "/jobs/postjobs",
+  "/jobs/viewjobs",
+  "/jobs/view-application",
+];
 const Sidebar = ({ isOpen, toggleMenu }) => {
   const location = useLocation();
   const [isDropDownOpen, setIssDropDownOpen] = useState(false);
   const [isjobOpen, setJobOpen] = useState(false);
   const [interviewOpen, setInterviewOpen] = useState(false);
+
+  const isJobRoute = jobRelatedRoutes.includes(location.pathname);
 
   const activeTab = location.pathname;
 
@@ -34,7 +41,7 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
           <div className="flex items-center justify-between w-full md:mx-0">
             {isOpen ? (
               <div className="border-b-[0.5px] text-white text-xl float-none text-left capitalize p-0 py-4 flex md:justify-center items-center relative border-white  w-full z-20">
-                <Link to="https://myseagull.ai">
+                <Link to="/dashboard">
                   <img
                     src="/Assets/logo_small.png"
                     width="70"
@@ -45,7 +52,7 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
               </div>
             ) : (
               <div className="border-b-[0.5px] text-white text-xl float-none text-left capitalize p-0 py-[21.5px] flex justify-center items-center relative border-white  w-full z-20">
-                <Link to="https://myseagull.ai">M</Link>
+                <Link to="/dashboard">M</Link>
               </div>
             )}
 
@@ -87,7 +94,7 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                 value="Test_12345#"
               />
               <li
-                className={`my-1 mx-3 rounded-md ${
+                className={`my-1 mx-2 rounded-md ${
                   activeTab === "/dashboard" ? "bg-[#4784ce]" : ""
                 }`}
               >
@@ -108,7 +115,7 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                   {isOpen && <span>Jobs</span>}
                   {isOpen && <i className="fa fa-caret-down pl-2"></i>}
                 </button>
-                {isjobOpen && (
+                {(isjobOpen || isJobRoute) && (
                   <ul className="pl-6 md:pl-3 duration-400 transition-all duration-300 py-1">
                     <li
                       className={`my-1 mr-2  py-2 rounded-md  ${
@@ -135,9 +142,9 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                     >
                       <Link
                         to="/jobs/viewjobs"
-                        className="nav-link text-white py-2 flex items-center"
+                        className="nav-link text-white flex items-center"
                       >
-                        <i className="fa fa-suitcase pr-2 text-sm"></i>
+                        <i className="fa fa-suitcase pr-3 text-sm"></i>
                         {isOpen && <span className="text-sm">View Jobs</span>}
                       </Link>
                     </li>
@@ -152,9 +159,9 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                     >
                       <Link
                         to="/jobs/view-application"
-                        className="nav-link text-white pb-2 flex items-center"
+                        className="nav-link text-white flex items-center"
                       >
-                        <i className="fa fa-bar-chart pr-2 text-sm"></i>
+                        <i className="fa fa-bar-chart pr-3 text-sm"></i>
                         {isOpen && (
                           <span className="text-sm">View Applications</span>
                         )}
@@ -181,7 +188,10 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                       } ${activeTab === "/schedule/add" ? "bg-[#4784ce]" : ""}`}
                     >
                       <Link
-                        to="https://myseagull.ai/zoom/add_schedule_interview.php"
+                        // to="/schedule/add"
+                        onClick={() => {
+                          alert("NO Navigation");
+                        }}
                         className="nav-link text-white py-1 flex items-center"
                       >
                         <i className="fa fa-puzzle-piece pr-2 text-sm"></i>
@@ -198,7 +208,10 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                       }`}
                     >
                       <Link
-                        to="https://myseagull.ai/zoom/view_schedule_interview.php"
+                        // to="/schedule/view"
+                        onClick={() => {
+                          alert("NO Navigation");
+                        }}
                         className="nav-link text-white py-1 flex items-center"
                       >
                         <i className="fa fa-puzzle-piece pr-2 text-sm"></i>
@@ -215,8 +228,11 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                       }`}
                     >
                       <Link
-                        to="https://myseagull.ai/zoom/zoom_config.php"
+                        // to="/schedule/setting"
                         className="nav-link text-white py-1 flex items-center"
+                        onClick={() => {
+                          alert("NO Navigation");
+                        }}
                       >
                         <i className="fa fa-puzzle-piece pr-2 text-sm"></i>
                         {isOpen && (
@@ -229,11 +245,9 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
               </li>
               <li className="nav-item py-1.5">
                 <Link
-                  to="/"
-                  target="_blank"
                   className="nav-link text-white flex items-center p-4"
                   onClick={() => {
-                    /* Your AJAX function here */
+                    alert("NO Navigation");
                   }}
                 >
                   <i className="fa fa-book pr-4 pl-4"></i>
@@ -248,7 +262,7 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
         <div className="md:hidden">
           <div className="flex items-center justify-between w-full md:mx-0">
             <div className="border-b-[0.5px] text-white text-xl float-none text-left capitalize p-0 py-4 flex md:justify-center items-center relative border-white  w-full z-20">
-              <Link to="https://myseagull.ai">
+              <Link to="/dashboard">
                 <img
                   src="/Assets/logo_small.png"
                   width="70"
@@ -283,9 +297,14 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                   id="password"
                   value="Test_12345#"
                 />
-                <li className="bg-[#4784ce] my-1 mx-3 rounded-md active">
+                {/* <li className="bg-[#4784ce] my-1 mx-3 rounded-md active"> */}
+                <li
+                  className={`my-1 mx-2 rounded-md ${
+                    activeTab === "/dashboard" ? "bg-[#4784ce]" : ""
+                  }`}
+                >
                   <Link
-                    to="https://myseagull.ai/dashboard/index.php"
+                    to="/dashboard"
                     className="nav-link text-white flex items-center p-3"
                   >
                     <i className="fa fa-dashboard pr-4 pl-3"></i>
@@ -303,28 +322,49 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                   </button>
                   {isjobOpen && (
                     <ul className="pl-6 md:pl-8 duration-400 transition-all duration-300">
-                      <li className="pl-4">
+                      {/* <li className="pl-4"> */}
+                      <li
+                        className={` mr-1  py-2 rounded-md  ${
+                          isOpen ? "pl-7" : "pl-4"
+                        } ${
+                          activeTab === "/jobs/postjobs" ? "bg-[#4784ce]" : ""
+                        }`}
+                      >
                         <Link
-                          to="https://myseagull.ai/placement/post_job.php"
+                          to="/jobs/postjobs"
                           className="nav-link text-white flex items-center"
                         >
                           <i className="fa fa-suitcase pr-2 text-sm"></i>
                           {isOpen && <span className="text-sm">Post Job</span>}
                         </Link>
                       </li>
-                      <li className="pl-4">
+                      <li
+                        className={` mr-1  py-2 rounded-md  ${
+                          isOpen ? "pl-7" : "pl-4"
+                        } ${
+                          activeTab === "/jobs/viewjobs" ? "bg-[#4784ce]" : ""
+                        }`}
+                      >
                         <Link
-                          to="https://myseagull.ai/placement/posted_jobs.php"
+                          to="/jobs/viewjobs"
                           className="nav-link text-white py-2 flex items-center"
                         >
                           <i className="fa fa-suitcase pr-2 text-sm"></i>
                           {isOpen && <span className="text-sm">View Jobs</span>}
                         </Link>
                       </li>
-                      <li className="pl-4">
+                      <li
+                        className={` mr-1  py-2 rounded-md  ${
+                          isOpen ? "pl-7" : "pl-4"
+                        } ${
+                          activeTab === "/jobs/view-application"
+                            ? "bg-[#4784ce]"
+                            : ""
+                        }`}
+                      >
                         <Link
-                          to="https://myseagull.ai/admission/jobs_request.php"
-                          className="nav-link text-white pb-2 flex items-center"
+                          to="/jobs/view-application"
+                          className="nav-link text-white flex items-center"
                         >
                           <i className="fa fa-bar-chart pr-2 text-sm"></i>
                           {isOpen && (
@@ -347,9 +387,16 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
 
                   {interviewOpen && (
                     <ul className="pl-6 md:pl-8 duration-400 transition-all duration-300">
-                      <li className="pl-4">
+                      <li
+                        className={` mr-1  py-2 rounded-md  ${
+                          isOpen ? "pl-7" : "pl-4"
+                        } ${activeTab === "/" ? "bg-[#4784ce]" : ""}`}
+                      >
                         <Link
-                          to="https://myseagull.ai/zoom/add_schedule_interview.php"
+                          // to="/"
+                          onClick={() => {
+                            alert("NO Navigation");
+                          }}
                           className="nav-link text-white py-1 flex items-center"
                         >
                           <i className="fa fa-puzzle-piece pr-2 text-sm"></i>
@@ -357,9 +404,16 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                           <span className="text-sm">Add Zoom Schedule</span>
                         </Link>
                       </li>
-                      <li className="pl-4">
+                      <li
+                        className={` mr-1  py-2 rounded-md  ${
+                          isOpen ? "pl-7" : "pl-4"
+                        } ${activeTab === "/" ? "bg-[#4784ce]" : ""}`}
+                      >
                         <Link
-                          to="https://myseagull.ai/zoom/view_schedule_interview.php"
+                          // to="/"
+                          onClick={() => {
+                            alert("NO Navigation");
+                          }}
                           className="nav-link text-white py-1 flex items-center"
                         >
                           <i className="fa fa-puzzle-piece pr-2 text-sm"></i>
@@ -367,9 +421,16 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                           <span className="text-sm">View Zoom Schedule</span>
                         </Link>
                       </li>
-                      <li className="pl-4">
+                      <li
+                        className={` mr-1  py-2 rounded-md  ${
+                          isOpen ? "pl-7" : "pl-4"
+                        } ${activeTab === "/" ? "bg-[#4784ce]" : ""}`}
+                      >
                         <Link
-                          to="https://myseagull.ai/zoom/zoom_config.php"
+                          // to="/"
+                          onClick={() => {
+                            alert("NO Navigation");
+                          }}
                           className="nav-link text-white py-1 flex items-center"
                         >
                           <i className="fa fa-puzzle-piece pr-2 text-sm"></i>
@@ -382,11 +443,9 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
                 </li>
                 <li className="nav-item py-1.5">
                   <Link
-                    to="/"
-                    target="_blank"
                     className="nav-link text-white flex items-center p-4"
                     onClick={() => {
-                      /* Your AJAX function here */
+                      alert("NO Navigation");
                     }}
                   >
                     <i className="fa fa-book pr-4 pl-4"></i>

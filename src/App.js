@@ -11,6 +11,9 @@ import ProtectedRoute from "./components/Authenications/protectedRoute";
 import UpdateJob from "./pages/UpdateJob";
 import JobDetails from "./pages/JobDetails";
 import ViewApplications from "./pages/ViewApplications";
+import EditformPage from "./pages/EditformPage";
+import ChnagePassword from "./pages/ChnagePassword";
+import CampusRequest from "./pages/CampusRequest";
 
 function App() {
   return (
@@ -49,6 +52,33 @@ function App() {
           path="/profile"
           element={
             <ProtectedRoute element={<Profile />} requiredType="employer" />
+          }
+        ></Route>
+        <Route
+          path="/edit-profile"
+          element={
+            <ProtectedRoute
+              element={<EditformPage />}
+              requiredType="employer"
+            />
+          }
+        ></Route>
+        <Route
+          path="/change-password"
+          element={
+            <ProtectedRoute
+              element={<ChnagePassword />}
+              requiredType="employer"
+            />
+          }
+        ></Route>
+        <Route
+          path="/campus-request"
+          element={
+            <ProtectedRoute
+              element={<CampusRequest />}
+              requiredType="employer"
+            />
           }
         ></Route>
         <Route

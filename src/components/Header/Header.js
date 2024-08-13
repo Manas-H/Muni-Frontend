@@ -72,10 +72,10 @@ const Header = () => {
 
           {isProfileDown && (
             <div
-              className=" flex absolute right-20 bg-white border border-[#bbb] rounded-sm p-3"
+              className=" flex absolute right-20 z-50 bg-white border border-[#bbb] rounded-sm p-3"
               x-placement="bottom-start"
             >
-              <div className="relative z-20">
+              <div className="relative ">
                 {" "}
                 <Link
                   className="flex justify-center items-center text-xs pr-1 text-[#272c33]"
@@ -85,7 +85,7 @@ const Header = () => {
                 </Link>
                 <Link
                   className="flex justify-center items-center text-xs text-[#272c33] pr-1  py-3 w-20"
-                  to=""
+                  to="/change-password"
                 >
                   <i className="fa fa-cog  text-xs py-1 px-1"></i> Change
                   Password

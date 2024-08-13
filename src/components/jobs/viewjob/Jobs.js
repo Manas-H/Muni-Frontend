@@ -99,34 +99,34 @@ const Jobs = () => {
             />
           </div>
           <div className="w-full overflow-x-auto">
-            <div className="mx-5 my-3">
-              <table className="border border-[#dee2e6] w-full border-b-[1px]">
-                <thead className="border-b-[1px] border-[#dee2e6] ">
+            <div className="mx-5 my-3  overflow-x-auto w-full">
+              <table className="border border-[#dee2e6] w-full border-b-[1px] ">
+                <thead className="border-b-[1px] border-[#dee2e6]">
                   <tr>
-                    <th className="text-sm py-2 text-[rgb(146,146,146)]">
+                    <th className="text-xs md:text-sm py-2 text-[rgb(146,146,146)]">
                       No.
                     </th>
-                    <th className="text-sm py-2 text-[#929292]">Job Title</th>
-                    <th className="text-sm py-2 text-[#929292]">Type</th>
-                    <th className="text-sm py-2 text-[#929292]">Designation</th>
-                    <th className="text-sm py-2 text-[#929292]">Salary</th>
-                    <th className="text-sm py-2 text-[#929292]">Skills</th>
-                    <th className="text-sm py-2 text-[#929292]">Visibility</th>
-                    <th className="text-sm py-2 text-[#929292] "> </th>
+                    <th className="text-xs md:text-sm md:py-2 text-[#929292]">Job Title</th>
+                    <th className="text-xs md:text-sm md:py-2 text-[#929292]">Type</th>
+                    <th className="text-xs md:text-sm md:py-2 text-[#929292]">Designation</th>
+                    <th className="text-xs md:text-sm md:py-2 text-[#929292]">Salary</th>
+                    <th className="text-xs md:text-sm md:py-2 text-[#929292]">Skills</th>
+                    <th className="text-xs md:text-sm md:py-2 text-[#929292]">Visibility</th>
+                    <th className="text-xs md:text-sm md:py-2 text-[#929292] "> </th>
                   </tr>
                 </thead>
-                <tbody className="">
+                <tbody className="overflow-x-auto">
                   {filteredJobPostings.length === 0 ? (
                     <tr>
                       <td colSpan="8" className="py-3 text-black">
-                        No jobs found.
+                        No jobs found. 
                       </td>
                     </tr>
                   ) : (
                     filteredJobPostings.map((job, index) => (
                       <tr
                         key={job._id}
-                        className="border-b-[1px] border-[#dee2e6] hover:bg-gray-100"
+                        className="border-b-[1px] border-[#dee2e6] hover:bg-gray-100 overflow-x-auto"
                       >
                         <td className="py-3 text-sm text-black">{index + 1}</td>
 

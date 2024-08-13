@@ -39,6 +39,8 @@ const LoginFrom = () => {
       // Store the token in local storage
       localStorage.setItem("token", token);
 
+      console.log("Verify api");
+
       // Navigate to the appropriate dashboard based on the account type
       switch (type) {
         case "student":
@@ -80,6 +82,7 @@ const LoginFrom = () => {
         `${process.env.REACT_APP_BACKEND_URL}/api/auth/login`,
         formData
       );
+      console.log("login api");
       console.log("Login clicked1", response);
       const { accounts, token, type } = response.data;
       console.log("Login clicked1", type);

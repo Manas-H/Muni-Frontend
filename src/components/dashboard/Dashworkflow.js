@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import FormModal from "./FormModal";
 import Card from "./Card";
 import Indicators from "./Indicators";
+import Loader from "../Loader/Loader";
 
 const Dashworkflow = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedStep, setSelectedStep] = useState("Step 1");
+  const [loading, setLoading] = useState(true);
   const [cardsData, setCardsData] = useState(
     Array(5).fill({ title: "", description: "" })
   );
@@ -43,6 +45,8 @@ const Dashworkflow = () => {
         setCardsData(stepsArray);
       } catch (error) {
         console.error("Error fetching steps:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -79,6 +83,14 @@ const Dashworkflow = () => {
       console.error("Invalid stepIndex:", stepIndex);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex flex-col bg-white text-black pt-52 h-[100vh]">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-gray-100 w-full">
